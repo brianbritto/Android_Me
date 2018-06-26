@@ -4,50 +4,56 @@ import pe.portfolio.android.android_me.R
 
 object AndroidImageAssets {
 
-    private val heads = mutableListOf(
-            R.drawable.head1,
-            R.drawable.head2,
-            R.drawable.head3,
-            R.drawable.head4,
-            R.drawable.head5,
-            R.drawable.head6,
-            R.drawable.head7,
-            R.drawable.head8,
-            R.drawable.head9,
-            R.drawable.head10,
-            R.drawable.head11,
-            R.drawable.head12
-    )
+    private val heads = object : ArrayList<Int>(){
+        init {
+            add(R.drawable.head1)
+            add(R.drawable.head2)
+            add(R.drawable.head3)
+            add(R.drawable.head4)
+            add(R.drawable.head5)
+            add(R.drawable.head6)
+            add(R.drawable.head7)
+            add(R.drawable.head8)
+            add(R.drawable.head9)
+            add(R.drawable.head10)
+            add(R.drawable.head11)
+            add(R.drawable.head12)
+        }
+    }
 
-    private val bodies = mutableListOf(
-            R.drawable.body1,
-            R.drawable.body2,
-            R.drawable.body3,
-            R.drawable.body4,
-            R.drawable.body5,
-            R.drawable.body6,
-            R.drawable.body7,
-            R.drawable.body8,
-            R.drawable.body9,
-            R.drawable.body10,
-            R.drawable.body11,
-            R.drawable.body12
-    )
+    private val bodies = object : ArrayList<Int>(){
+        init {
+            add(R.drawable.body1)
+            add(R.drawable.body2)
+            add(R.drawable.body3)
+            add(R.drawable.body4)
+            add(R.drawable.body5)
+            add(R.drawable.body6)
+            add(R.drawable.body7)
+            add(R.drawable.body8)
+            add(R.drawable.body9)
+            add(R.drawable.body10)
+            add(R.drawable.body11)
+            add(R.drawable.body12)
+        }
+    }
 
-    private val legs = mutableListOf(
-            R.drawable.legs1,
-            R.drawable.legs2,
-            R.drawable.legs3,
-            R.drawable.legs4,
-            R.drawable.legs5,
-            R.drawable.legs6,
-            R.drawable.legs7,
-            R.drawable.legs8,
-            R.drawable.legs9,
-            R.drawable.legs10,
-            R.drawable.legs11,
-            R.drawable.legs12
-    )
+    private val legs = object : ArrayList<Int>(){
+        init {
+            add(R.drawable.legs1)
+            add(R.drawable.legs2)
+            add(R.drawable.legs3)
+            add(R.drawable.legs4)
+            add(R.drawable.legs5)
+            add(R.drawable.legs6)
+            add(R.drawable.legs7)
+            add(R.drawable.legs8)
+            add(R.drawable.legs9)
+            add(R.drawable.legs10)
+            add(R.drawable.legs11)
+            add(R.drawable.legs12)
+        }
+    }
 
     private val all = object : ArrayList<Int>(){
         init{
@@ -61,7 +67,7 @@ object AndroidImageAssets {
 
     fun getBodies() = bodies
 
-    fun getLegs() = heads
+    fun getLegs() = legs
 
     fun getAll() = all
 }
