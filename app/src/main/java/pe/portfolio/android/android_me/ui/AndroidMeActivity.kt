@@ -16,24 +16,35 @@ class AndroidMeActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
 
+            val fragmentManager = supportFragmentManager
+
             val headFragment = BodyPartFragment()
             headFragment.setImageIds(AndroidImageAssets.getHeads())
-            headFragment.setListIndex(1)
+            val headIndex = intent.getIntExtra("headIndex",0)
+            headFragment.setListIndex(headIndex)
+            fragmentManager.beginTransaction()
+                    .add(R.id.head_container, headFragment)
+                    .commit()
 
             val bodyFragment = BodyPartFragment()
             bodyFragment.setImageIds(AndroidImageAssets.getBodies())
-            headFragment.setListIndex(1)
+            val bodyIndex = intent.getIntExtra("bodyIndex",0)
+            bodyFragment.setListIndex(bodyIndex)
+            fragmentManager.beginTransaction()
+                    .add(R.id.body_container, bodyFragment)
+                    .commit()
 
             val legFragment = BodyPartFragment()
             legFragment.setImageIds(AndroidImageAssets.getLegs())
-            legFragment.setListIndex(1)
-
-            val fragmentManager = supportFragmentManager
+            val legIndex = intent.getIntExtra("legIndex",0)// intent.extras["legIndex"] as Int
+            legFragment.setListIndex(legIndex)
             fragmentManager.beginTransaction()
-                    .add(R.id.head_container, headFragment)
-                    .add(R.id.body_container, bodyFragment)
                     .add(R.id.leg_container, legFragment)
                     .commit()
+
+            Log.v(TAG, "${intent.extras["legIndex"]}")
+            Log.v(TAG, "${intent.getIntExtra("legIndex",0)}")
+            Log.v(TAG, "$headIndex, $bodyIndex, $legIndex")
         } else{
             Log.v(TAG, savedInstanceState.toString())
         }

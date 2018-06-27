@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 
-class MaterListAdapter(context:Context, imageIds:List<Int>) : BaseAdapter() {
+class MasterListAdapter(context:Context, imageIds:ArrayList<Int>) : BaseAdapter() {
 
     private val mContext : Context = context
-    private val mImageIds : List<Int> = imageIds
+    private val mImageIds : ArrayList<Int> = imageIds
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val imageView : ImageView?
